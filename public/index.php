@@ -16,12 +16,28 @@ require_once '../App/conditions.php';
 require '../App/roads.php';
 
 if ($results !== null) {
-    if (is_callable($results['target'])){
+    if (is_callable($results['target'])) {
         call_user_func_array($results['target'], $results['params']);
     } else {
+        $target = $results['target'];
         ob_start();
-        require '../App/view/templates/{$results[\'target\']}.php';
+        require "../App/view/templates/{$target}.php";
         $main = ob_get_clean();
+
+        if (
+            $target === 'home'
+            || $target === '/'
+            || $target === 'index'
+        ) {
+            $title = 'Accueil';
+        } elseif ($target === 'playerList') {
+            $title = 'Liste des joueurs';
+        } elseif ($target === 'forum') {
+            $title = 'Forum';
+        } elseif ($target === 'login') {
+            $title = 'Connexion';
+        }
+
         require '../App/view/layout.php';
     }
 } else {

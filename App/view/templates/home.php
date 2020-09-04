@@ -1,5 +1,5 @@
 <?php
-
+/*
 if (isset($_SESSION['id'])) {
     if($results['token'] == "ok"){
     $_SESSION['account'] = $results['account_type'];
@@ -10,12 +10,6 @@ $requete = $db->query("SELECT name_site, description_site FROM configuration_sit
 $results = $requete->fetch();
 
 ?>
-
-    <meta charset="UTF-8" />
-    <meta name="description" content="<?php echo $results['description_site']; ?>" />
-    <link rel="shortcut icon" href="admin/ressources/images/logo/logo.ico" />
-    <link rel="stylesheet" href="admin/ressources/style/style.css" type="text/css" />
-    <title>Accueil - <?php echo $results['name_site']; ?></title>
 
 <body id="body_index">
     <?php include "admin/ressources/code/top_bar.php"; ?>
@@ -82,4 +76,4 @@ $results = $requete->fetch();
 
 
 
-    <?php include "admin/ressources/code/bottom_bar.php"; ?>
+    <?php include "admin/ressources/code/bottom_bar.php"; */ ?>
