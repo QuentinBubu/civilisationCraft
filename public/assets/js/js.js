@@ -1,30 +1,18 @@
+/*
 let hauteur = document.getElementById("profil_top_bar").offsetHeight;
 document.getElementById("profil_top_bar").style.width = hauteur + "px";
+*/
+const mobileMenu = document.getElementById("phoneMenu");
+const menu = document.querySelector("header>nav");
 
-const mobile_menu = document.getElementById("phoneMenu");
-const topBarre = document.getElementsByClassName("top_bar");
-const div = document.getElementById("top-bar-nav");
-
-mobile_menu.addEventListener("click", function() {
-    const div = document.getElementById("top-bar-nav");
-    if (div.style.display === "none") {
-        div.style.display = "block";
-        topBarre[0].style.position = "fixed";
-    } else if (div.style.display === "block") {
-        div.style.display = "none";
-        topBarre[0].style.position = "static";
-    } else {
-        div.style.display = "block";
-        topBarre[0].style.position = "fixed";
+mobileMenu.addEventListener("click", function() {
+    if (window.getComputedStyle(menu, null).getPropertyValue("display") === "none") {
+        menu.style.display = "block";
+        menu.style.position = "fixed";
+        mobileMenu.style.position = "fixed";
+    } else if (window.getComputedStyle(mobileMenu, null).getPropertyValue("display") === "block") {
+        menu.style.display = "none";
+        menu.style.position = "static";
+        mobileMenu.style.position = "static";
     }
 }, false);
-
-if (window.getComputedStyle(mobile_menu, null).getPropertyValue("display") !== "none") {
-    const list = document.querySelectorAll("#breakPoints>ul>li");
-    for (let i = 0; i < list.length; i++) {
-        list[i].addEventListener("click", function() {
-            div.style.display = "none";
-            topBarre[0].style.position = "static";
-        }, false);
-    }
-}

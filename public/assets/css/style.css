@@ -4,8 +4,8 @@
 
 body {
     background: url("../picture/backgrounds/index.png");
-    background-size: cover;
-    background-position: fixed;
+    background-attachment: fixed;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
@@ -23,26 +23,78 @@ header #logo {
     margin: auto;
 }
 
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    width: 100%;
+    background-color: #adadad;
+    padding: 5px;
+}
+
+footer>* {
+    justify-self: center;
+}
+
+footer img {
+    width: 2.3rem;
+}
+
 @media (min-width: 769px) {
+    body {
+        background-size: cover;
+    }
+    header {
+        grid-column-start: 1;
+        grid-column-end: -1;
+        grid-row-start: 1;
+    }
     header>nav {
         display: grid;
-        grid-template-columns: repeat(1, 1fr 2fr 2fr 1fr 1fr);
+        grid-template-columns: 1fr 2fr 2fr 1fr 1fr;
     }
     header>#phoneMenu {
         display: none;
+    }
+    footer {
+        grid-column-start: 1;
+        grid-column-end: -1;
+        grid-row-start: -1;
     }
 }
 
 @media screen and (max-width: 768px),
 (orientation: portrait) {
+    body {
+        background-size: auto 100%;
+    }
     header>nav {
         display: flex;
         flex-direction: column;
+        width: 100%;
+        height: calc(100vh - 2rem);
+        top: 2rem;
     }
     header>nav>li {
         margin: 5px 0;
     }
     header>nav {
         display: none;
+    }
+    header>#phoneMenu {
+        background-color: #4682B4;
+        width: 100%;
+        border: 2.5px solid black;
+    }
+    header>#phoneMenu>img {
+        width: 2rem;
+        margin: auto;
+    }
+    footer {
+        grid-template-columns: none;
+        grid-template-rows: repeat(3, 1fr);
+    }
+    footer img {
+        grid-row-start: 3;
     }
 }

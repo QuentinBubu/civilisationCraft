@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?= $title . ' -- CivilisationCraft' ?? 'CivilisationCraft' ?></title>
+    <link rel="shortcut icon" href="./assets/picture/logo/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <?= $cssLink ?? null ?>
-    <script src="./assets/js/js.js" defer></script>
-    <?= $jsLink ?? null ?>
+    <link rel="stylesheet" href="<?= $cssLink ?? null ?>" />
+    <script src="<?= $jsLink ?? null ?>" defer></script>
 </head>
 <body>
     <header>
         <div id="phoneMenu">
-            <img src="./assets/picture/othes/iconMenu.svg" alt="Menu" />
+            <img src="./assets/picture/other/iconMenu.svg" alt="Menu" />
         </div>
         <nav>
             <li>
@@ -39,6 +39,7 @@
                     <a href="<?= $router->generate('signup') ?>">S'inscrire</a>
                 </li>
             <?php else: ?>
+                <li></li>
                 <li>
                     <img
                         src="<?= $dbProfilPicture['profilPicture']; ?>"
@@ -59,11 +60,9 @@
     <?= $main ?>
 
     <footer class="bottom_bar">
+        <p>Tous droits réservés à CivilisationCraft</p>
         <img src="./assets/picture/logo/logo.ico" alt="Logo du serveur" />
-        Tous droits réservés à CivilisationCraft | 
-        <a href="/admin/ressources/code/mentions-legales.php">
-            Mentions légales
-        </a>
+        <a href="<?= $router->generate('cgu') ?>">Mentions légales</a>
     </footer>
 </body>
 </html>

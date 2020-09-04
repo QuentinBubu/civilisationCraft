@@ -1,3 +1,14 @@
+<section>
+
+</section>
+
+<aside>
+
+</aside>
+
+
+
+
 <?php
 /*
 if (isset($_SESSION['id'])) {

@@ -24,18 +24,20 @@ if ($results !== null) {
         require "../App/view/templates/{$target}.php";
         $main = ob_get_clean();
 
-        if (
-            $target === 'home'
-            || $target === '/'
-            || $target === 'index'
-        ) {
+        if ($target === 'home') {
             $title = 'Accueil';
+            $jsLink = './assets/js/js.js';
+            $cssLink = './assets/css/index.css';
         } elseif ($target === 'playerList') {
             $title = 'Liste des joueurs';
         } elseif ($target === 'forum') {
             $title = 'Forum';
         } elseif ($target === 'login') {
             $title = 'Connexion';
+        } elseif ($target === 'mentions-legales') {
+            $title = 'Mentions Légales';
+        } elseif ($target === 'test') {
+            $cssLink = './assets/css/index.css';
         }
 
         require '../App/view/layout.php';

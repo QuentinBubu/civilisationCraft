@@ -9,6 +9,10 @@ $router->map('GET', '/login', 'login', 'login');
 $router->map('GET', '/signup', 'signup', 'signup');
 $router->map('GET', '/settings', 'settings', 'settings');
 $router->map('GET', '/logout', 'logout', 'logout');
+$router->map('GET', '/mentions-legales', 'mentions-legales', 'cgu');
+$router->map('GET', '/cgu', 'mentions-legales');
+
+$router->map('GET', '/test', 'test');
 
 $router->map('POST', '/login-back', '../App/php/LoginSignup/login', 'login-back');
 $router->map('POST', '/signup-back', '../App/php/LoginSignup/signup', 'signup-back');
