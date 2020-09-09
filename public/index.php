@@ -1,5 +1,7 @@
 <?php
 
+ini_set("memory_limit", "10000M");
+
 session_start();
 
 require '../vendor/autoload.php';

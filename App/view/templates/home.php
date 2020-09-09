@@ -1,9 +1,58 @@
-<section>
-
+<section id="actu">
+    <p class="title">Actualités:</p>
+    <?php for ($i = 0; $i < 6; $i++): ?>
+        <article class="article">
+            <p class="actuTitle">aaaa<?=/* $results['title'] */ 0 ?></p>
+            <p class="actuText">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+            <?= /*$results['text'];*/0 ?>
+            </p>
+            <p class="actuDate">ccccccccccccccccccccc
+                <?= /* $results['date_parution'] */ 0?>
+            </p>
+        </article>
+    <?php endfor; ?>
 </section>
 
 <aside>
+    <section id="socialNetwork">
+        <p>
+            <img
+                src="/admin/ressources/images/other/share.png"
+                alt="share logo"
+                class="rs_logo_share"
+            />
+            Réseaux sociaux:
+        </p>
+        <?php
+            while ($i = 0 < 6):
+        ?>
+                <hr />
+                <a href="<?= 0 //$results['link'] ?>">
+                    <img
+                        src="<?= 0 //$results['link_image'] ?>"
+                        alt="Logo"
+                        class="logo_rs"
+                    />
+                    <?= 111 //$results['rs_name'] ?>
+                </a>
+            <?php $i++; endwhile; ?>
+        </section>
+        <section id="newPeople">
+            <p>Nouveaux arrivants:</p>
+            <?php
+                while ($i = 0 < 6):
+            ?>
+                <hr />
+                <span>
+                    <img
+                        src="<?= 222 //$results['image_profil'] ?>"
+                        alt="Photo de profil"
+                    />
+                    Bienvenue <?= 555 //$results['name_user'] ?> dans le serveur!
+                </span>
 
+                <?php endwhile; ?>
+        </section>
 </aside>
 
 
