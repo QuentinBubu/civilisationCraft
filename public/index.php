@@ -1,6 +1,6 @@
 <?php
 
-ini_set("memory_limit", "10000M");
+ini_set("memory_limit", "8190");
 
 session_start();
 
